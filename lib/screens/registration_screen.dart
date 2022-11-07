@@ -1,3 +1,4 @@
+import 'package:cloud_func_module/constants/app_constants.dart';
 import 'package:cloud_func_module/constants/color_constants.dart';
 import 'package:cloud_func_module/screens/login_screen.dart';
 import 'package:cloud_functions/cloud_functions.dart';
@@ -57,7 +58,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       emailController!.clear();
       passwordController!.clear();
       cPasswordController!.clear();
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginScreen()));
         return "aaaa";
       }
      
@@ -126,21 +127,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image.asset(
-                        "assets/images/back.png",
+                        AppConstants.backArrow,
                         height: 41,
                         width: 41,
                       ),
-                      // SizedBox(
-                      //   height: AppConfig().rH(3.2),
-                      // ),
-                      // Text(
-                      //   "Welcome back!",
-                      //   style: TextStyle(
-                      //       fontFamily: "Inter",
-                      //       fontWeight: FontWeight.w700,
-                      //       fontSize: 30,
-                      //       foreground: Paint()..shader = linearGradient),
-                      // ),
                     ],
                   ),
                 ),
@@ -148,7 +138,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               Stack(
                 children: [
                   Image.asset(
-                    "assets/images/trapezium_right.png",
+                    AppConstants.trapeziumRight,
                     height: 250,
                     width: MediaQuery.of(context).size.width,
                     fit: BoxFit.fill,
@@ -158,7 +148,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     margin: const EdgeInsets.only(top: 39),
                     child: Center(
                       child: Image.asset(
-                        "assets/images/design.png",
+                        AppConstants.design,
                         height: 200,
                         width: MediaQuery.of(context).size.width,
                         fit: BoxFit.fill,
@@ -170,10 +160,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     child: FractionallySizedBox(
                       widthFactor: 0.85,
                       child: Text(
-                        "let's Join!",
+                        AppConstants.join,
                         textAlign: TextAlign.end,
                         style: TextStyle(
-                            fontFamily: "Inter",
+                            fontFamily: AppConstants.inter,
                             fontWeight: FontWeight.w700,
                             fontSize: 30,
                             foreground: Paint()..shader = linearGradient),
@@ -192,7 +182,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         height: AppConfig().rH(3.2),
                       ),
                       CommonTextFieldWidget(
-                        hintText: "Username",
+                        hintText: AppConstants.username,
                         controller: userNameController,
                         callBack: (val) {},
                         keyboardType: TextInputType.emailAddress,
@@ -209,7 +199,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         height: AppConfig().rH(1.5),
                       ),
                       CommonTextFieldWidget(
-                        hintText: "Email",
+                        hintText: AppConstants.email,
                         controller: emailController,
                         callBack: (val) {},
                         keyboardType: TextInputType.emailAddress,
@@ -226,7 +216,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         height: AppConfig().rH(1.5),
                       ),
                       CommonTextFieldWidget(
-                        hintText: "Password",
+                        hintText: AppConstants.pass,
                         controller: passwordController,
                         callBack: (val) {},
                         keyboardType: TextInputType.text,
@@ -244,7 +234,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         height: AppConfig().rH(1.5),
                       ),
                       CommonTextFieldWidget(
-                        hintText: "Confirm Password",
+                        hintText: AppConstants.cPass,
                         controller: cPasswordController,
 
                         callBack: (val) {},
@@ -280,7 +270,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 });
                               } else {
                                 showRedToast(
-                                    "Password and confirm password should be same");
+                                    AppConstants.passAndCPass);
                               }
                             }
                           }
@@ -302,47 +292,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 ]),
                           ),
                           child: Text(
-                            "Agree and Register",
+                            AppConstants.agree,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontFamily: "Inter",
+                                fontFamily: AppConstants.inter,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                                 color: Colors.white),
                           ),
                         ),
                       ),
-                      // SizedBox(
-                      //   height: AppConfig().rH(3.5),
-                      // ),
-                      // Row(
-                      //   children: [
-                      //     Flexible(
-                      //       child: Image.asset(
-                      //         "assets/images/facebook.png",
-                      //         height: 60,
-                      //       ),
-                      //     ),
-                      //     SizedBox(
-                      //       width: 7,
-                      //     ),
-                      //     Flexible(
-                      //       child: Image.asset(
-                      //         "assets/images/apple.png",
-                      //         height: 60,
-                      //       ),
-                      //     ),
-                      //     SizedBox(
-                      //       width: 7,
-                      //     ),
-                      //     Flexible(
-                      //       child: Image.asset(
-                      //         "assets/images/google.png",
-                      //         height: 60,
-                      //       ),
-                      //     )
-                      //   ],
-                      // ),
                       SizedBox(
                         height: AppConfig().rH(3),
                       ),
@@ -355,9 +314,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             horizontal: AppConfig().rW(1),
                           ),
                           child: Text(
-                            "Already have an account?",
+                            AppConstants.alreadyHaveAct,
                             style: TextStyle(
-                                fontFamily: "Inter",
+                                fontFamily: AppConstants.inter,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 12,
                                 color: Colors.black),
@@ -374,9 +333,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               horizontal: AppConfig().rW(1),
                             ),
                             child: Text(
-                              "Agree and register",
+                              AppConstants.agreeAndRegister,
                               style: TextStyle(
-                                  fontFamily: "Inter",
+                                  fontFamily: AppConstants.inter,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 12,
                                   color: ColorConstants.orangeColor),
