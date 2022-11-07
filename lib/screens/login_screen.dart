@@ -1,7 +1,6 @@
+import 'package:cloud_func_module/constants/app_constants.dart';
 import 'package:cloud_func_module/constants/color_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
 import '../app_config/app_config.dart';
 import '../widgets/common_text_field.dart';
 
@@ -56,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.asset(
-                      "assets/images/back.png",
+                      AppConstants.backArrow,
                       height: 41,
                       width: 41,
                     ),
@@ -64,9 +63,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: AppConfig().rH(3.2),
                     ),
                     Text(
-                      "Welcome back!",
+                      AppConstants.welcomeBack,
                       style: TextStyle(
-                          fontFamily: "Inter",
+                          fontFamily: AppConstants.inter,
                           fontWeight: FontWeight.w700,
                           fontSize: 30,
                           foreground: Paint()..shader = linearGradient),
@@ -82,9 +81,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: FractionallySizedBox(
                     widthFactor: 0.85,
                     child: Text(
-                      "let's start now",
+                      AppConstants.startNow,
                       style: TextStyle(
-                          fontFamily: "Inter",
+                          fontFamily: AppConstants.inter,
                           fontWeight: FontWeight.w700,
                           fontSize: 30,
                           foreground: Paint()..shader = linearGradient),
@@ -92,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Image.asset(
-                  "assets/images/trapezium_left.png",
+                  AppConstants.trapeziumLeft,
                   height: 250,
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.fill,
@@ -102,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   margin: const EdgeInsets.only(left: 70, top: 39),
                   child: Center(
                     child: Image.asset(
-                      "assets/images/upper_design.png",
+                      AppConstants.upperDesign,
                       height: 200,
                       width: MediaQuery.of(context).size.width,
                       fit: BoxFit.fill,
@@ -121,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: AppConfig().rH(3.2),
                     ),
                     CommonTextFieldWidget(
-                      hintText: "Enter your email",
+                      hintText: AppConstants.enterEmail,
                       controller: emailController,
                       callBack: (val) {},
                       keyboardType: TextInputType.emailAddress,
@@ -135,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: AppConfig().rH(1.5),
                     ),
                     CommonTextFieldWidget(
-                      hintText: "Enter your password",
+                      hintText: AppConstants.enterPass,
                       controller: passwordController,
                       callBack: (val) {},
                       keyboardType: TextInputType.text,
@@ -148,13 +147,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: AppConfig().rH(3.5),
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        "Forgot Password?",
+                       AppConstants.forgotPass,
                         textAlign: TextAlign.end,
                         style: TextStyle(
-                            fontFamily: "Inter",
+                            fontFamily: AppConstants.inter,
                             fontWeight: FontWeight.w600,
                             fontSize: 14,
                             color: ColorConstants.lightBlueColor),
@@ -171,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [
@@ -179,46 +178,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               ColorConstants.orangeColor
                             ]),
                       ),
-                      child: Text(
-                        "Login",
+                      child: const Text(
+                       AppConstants.login,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontFamily: "Inter",
+                            fontFamily:AppConstants.inter,
                             fontWeight: FontWeight.w600,
                             fontSize: 14,
                             color: Colors.white),
                       ),
-                    ),
-                    SizedBox(
-                      height: AppConfig().rH(3.5),
-                    ),
-                    Row(
-                      children: [
-                        Flexible(
-                          child: Image.asset(
-                            "assets/images/facebook.png",
-                            height: 60,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 7,
-                        ),
-                        Flexible(
-                          child: Image.asset(
-                            "assets/images/apple.png",
-                            height: 60,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 7,
-                        ),
-                        Flexible(
-                          child: Image.asset(
-                            "assets/images/google.png",
-                            height: 60,
-                          ),
-                        )
-                      ],
                     ),
                     SizedBox(
                       height: AppConfig().rH(5),
@@ -229,12 +197,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Padding(
                         padding: EdgeInsets.symmetric(
                           vertical: AppConfig().rH(2),
-                          //horizontal: AppConfig().rW(2),
                         ),
-                        child: Text(
-                          "Don't have an account?",
+                        child: const Text(
+                          AppConstants.dontAct,
                           style: TextStyle(
-                              fontFamily: "Inter",
+                              fontFamily: AppConstants.inter,
                               fontWeight: FontWeight.w600,
                               fontSize: 14,
                               color: Colors.black),
@@ -248,10 +215,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             vertical: AppConfig().rH(2),
                             horizontal: AppConfig().rW(2),
                           ),
-                          child: Text(
-                            "Register Now",
+                          child: const Text(
+                           AppConstants.registerNow,
                             style: TextStyle(
-                                fontFamily: "Inter",
+                                fontFamily: AppConstants.inter,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
                                 color: ColorConstants.orangeColor),

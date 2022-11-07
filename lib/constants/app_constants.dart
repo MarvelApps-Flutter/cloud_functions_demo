@@ -17,6 +17,7 @@ class AppConstants
   static const String getStarted = "Get Started";
   static const String backArrow = "assets/images/back.png";
   static const String trapeziumRight = "assets/images/trapezium_right.png";
+  static const String trapeziumLeft = "assets/images/trapezium_left.png";
   static const String design = "assets/images/design.png";
   static const String join = "let's Join!";
   static const String agreeAndRegister = "Agree and register";
@@ -27,4 +28,13 @@ class AppConstants
   static const String pass = "Password";
   static const String email = "Email";
   static const String username = "Username";
+  static const String welcomeBack = "Welcome back!";
+  static const String startNow = "let's start now";
+  static const String upperDesign = "assets/images/upper_design.png";
+  static const String enterEmail = "Enter your email";
+  static const String enterPass = "Enter your password";
+  static const String forgotPass =  "Forgot Password?";
+  static const String registerNow = "Register Now";
+  static const String login = "Login";
+  static const String dontAct = "Don't have an account?";
 }

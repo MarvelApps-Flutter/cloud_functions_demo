@@ -255,12 +255,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       InkWell(
                         onTap: () async {
                           if (formGlobalKey!.currentState!.validate()) {
-                            if (userNameController!.text.toString().length != 0 &&
-                                emailController!.text.toString().length != 0 &&
-                                passwordController!.text.toString().length !=
-                                    0 &&
-                                cPasswordController!.text.toString().length !=
-                                    0) {
+                            if (userNameController!.text.toString().isNotEmpty &&
+                                emailController!.text.toString().isNotEmpty &&
+                                passwordController!.text.toString().isNotEmpty &&
+                                cPasswordController!.text.toString().isNotEmpty) {
                               if (passwordController!.text.toString().trim() ==
                                   cPasswordController!.text.toString().trim()) {
                                 setIsLoading();
@@ -283,7 +281,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
                                 colors: [
@@ -291,7 +289,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   ColorConstants.orangeColor
                                 ]),
                           ),
-                          child: Text(
+                          child: const Text(
                             AppConstants.agree,
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -313,7 +311,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             vertical: AppConfig().rH(1),
                             horizontal: AppConfig().rW(1),
                           ),
-                          child: Text(
+                          child: const Text(
                             AppConstants.alreadyHaveAct,
                             style: TextStyle(
                                 fontFamily: AppConstants.inter,
@@ -332,7 +330,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               vertical: AppConfig().rH(1),
                               horizontal: AppConfig().rW(1),
                             ),
-                            child: Text(
+                            child: const Text(
                               AppConstants.agreeAndRegister,
                               style: TextStyle(
                                   fontFamily: AppConstants.inter,
